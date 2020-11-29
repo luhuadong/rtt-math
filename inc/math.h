@@ -13,14 +13,29 @@
 
 #include <rtthread.h>
 
-#define M_PI 3.141592653589793238462643
+#define M_E              2.7182818284590452354
+#define M_LOG2E          1.4426950408889634074        /* log_2 e */
+#define M_1_PI           0.31830988618379067154       /* 1/pi */
+#define M_2_PI           0.63661977236758134308       /* 2/pi */
+#define M_2_SQRTPI       1.12837916709551257390       /* 2/sqrt(pi) */
+#define M_LN10           2.30258509299404568402       /* log_e 10 */
+#define M_LN2            0.69314718055994530942       /* log_e 2 */
+#define M_LOG10E         0.43429448190325182765       /* log_10 e */
+#define M_PI             3.14159265358979323846       /* pi */
+#define M_PI_2           1.57079632679489661923       /* pi/2 */
+#define M_PI_4           0.78539816339744830962       /* pi/4 */
+#define M_SQRT1_2        0.70710678118654752440       /* 1/sqrt(2) */
+#define M_SQRT2          1.41421356237309504880       /* sqrt(2) */
 
 
-int   random(const int min, const int max);
-int   abs(const int x);
-int   ceil(const int x);
-int   floor(const int x);
-int   round(const int x);
+double random(void);
+int    randrange(int start, int stop, int step);
+int    randint(int start, int stop);
+
+int    abs(const int x);
+int    ceil(const int x);
+int    floor(const int x);
+int    round(const int x);
 
 int   sqrt(const int x);
 int   log(const int x);
@@ -35,15 +50,15 @@ int   modf(const int x);
 float rad(const float x);
 float deg(const float x);
 
-float sin(const float x);
-float asin(const float x);
-float sinh(const float x);
-float cos(const float x);
-float acos(const float x);
-float cosh(const float x);
-float tan(const float x);
-float atan(const float x);
-float atan2(const float y, const float x);
-float tanh(const float x);
+double sin(const double x);   /* returns sine of x radians */
+double asin(const double x);  /* returns A, the angle corresponding to sin (A) = x */
+double sinh(const double x);
+double cos(const double x);   /* returns cosine of y radians */
+double acos(const double x);  /* returns A, the angle corresponding to cos (A) = x */
+double cosh(const double x);
+double tan(const double x);   /* returns the tangent of x radians */
+double atan(const double x);  /* returns A, the angle corresponding to tan (A) = x */
+double atan2(const double y, const double x);
+double tanh(const double x);
 
 #endif /* __RTT_MATH_H__ */
